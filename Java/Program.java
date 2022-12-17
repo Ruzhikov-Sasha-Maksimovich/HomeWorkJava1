@@ -1,13 +1,23 @@
-public class Program{
-    public static void main(String[] args) throws IOException {
-        int result = showTotalAmount(5);
-    }
-
-    public static int showTotalAmount(int value) {
-        int result = 0;
-        for (int i = 0; i <= value; i++) {
-            result += i;
+import java.util.Arrays;
+ 
+public class First {
+    public static void main(String[] args) {
+        int [] mas = {11, 3, 14, 16, 7};
+ 
+        boolean isSorted = false;
+        int buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < mas.length-1; i++) {
+                if(mas[i] > mas[i+1]){
+                    isSorted = false;
+ 
+                    buf = mas[i];
+                    mas[i] = mas[i+1];
+                    mas[i+1] = buf;
+                }
+            }
         }
-        return result;
+        System.out.println(Arrays.toString(mas));
     }
 }
